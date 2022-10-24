@@ -1,1 +1,1 @@
-This repository contains projects on ALX high level programming.
+This directory contains implementations of python scripts using flow control statements
