@@ -8,5 +8,5 @@ def write_file(filename="", text=""):
 
     Returns: number of characters written
     """
-    with open(filename, 'w', encoding='uft-8') as a_file:
+    with open(filename, 'w', encoding='utf-8') as a_file:
         return a_file.write(text)
