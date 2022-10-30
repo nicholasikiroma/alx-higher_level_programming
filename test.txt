@@ -1,4 +1,0 @@
-Trying to see if it works.
-The format specifier {:>4} means “print this argument right-justified within 4 spaces.”
-The a_line variable contains the complete line, carriage returns and all. 
-The rstrip() string method removes the trailing whitespace, including the carriage return characters.
