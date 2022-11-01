@@ -3,7 +3,6 @@
 
 import os
 import json
-from types import new_class
 
 
 class Base:
