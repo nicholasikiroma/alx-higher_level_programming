@@ -12,6 +12,15 @@ class Square(Rectangle):
         """Instantiation of class"""
         super().__init__(size, size, x, y, id)
 
+    def __str__(self):
+        """Overwrites str() method"""
+        str_rectangle = '[Square] '
+        str_id = '({}) '.format(self.id)
+        str_xy = '{}/{} - '.format(self.x, self.y)
+        str_wh = '{}/{}'.format(self.width, self.height)
+
+        return str_rectangle + str_id + str_xy + str_wh
+
     @property
     def size(self):
         """Retrieves the size of the Square"""
@@ -20,37 +29,35 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Assigns value to size"""
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-
-        if value <= 0:
-            raise ValueError("height must be greater than 0")
-
         self.width = value
         self.height = value
 
     def __str__(self):
         """Overwrites str() method"""
-        return "[Square] ({}) {} {} - {}/{}".format(self.id,
-                                                    self.x, self.y,
-                                                    self.width)
+        str_rectangle = '[Square] '
+        str_id = '({}) '.format(self.id)
+        str_xy = '{}/{} - '.format(self.x, self.y)
+        str_size = '{}'.format(self.size)
+
+        return str_rectangle + str_id + str_xy + str_size
 
     def update(self, *args, **kwargs):
         """Updates class Square"""
-        if len(args):
-            for i, arg in enumerate(args):
-                if i == 0:
-                    self.id = arg
-                elif i == 1:
-                    self.size = arg
-                elif i == 2:
-                    self.x = arg
-                elif i == 3:
-                    self.y = arg
+        if args is not None and len(args) is not 0:
+            list_attr = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if list_attr[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
                 else:
-                    for key, value in kwargs.items():
-                        if hasattr(self, key) is True:
-                            setattr(self, key, value)
+                    setattr(self, list_attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """Returns dictonary representation of a Square"""

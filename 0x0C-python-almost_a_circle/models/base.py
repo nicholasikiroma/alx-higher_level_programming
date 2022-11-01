@@ -20,11 +20,11 @@ class Base:
         Args:
             id(int): Identity of class instance
         """
-        if id is not None:
-            self.id = id
-        else:
-            __nb_objects += 1
+        if id is None:
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
