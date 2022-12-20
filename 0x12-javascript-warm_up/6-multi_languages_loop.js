@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const myString = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+const myString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
 let i = 0;
 
