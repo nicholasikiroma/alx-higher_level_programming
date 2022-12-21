@@ -1,9 +1,8 @@
 #!/usr/bin/node
-class Rectangle { 
-    constructor(w, h) {
-        this.w = w;
-        this.h = h;
-    }
-
+class Rectangle {
+  constructor (w, h) {
+    this.w = w;
+    this.h = h;
+  }
 }
-exports.Rectangle = Rectangle
+exports.Rectangle = Rectangle;
