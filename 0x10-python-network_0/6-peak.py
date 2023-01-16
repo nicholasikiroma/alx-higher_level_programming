@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# function that finds a peak in a list of unsorted integers.
+"""Moddule contains a function that finds the peak value of a list"""
+
 
 def find_peak(list_of_integers):
     """returns peak value"""
