@@ -1,5 +1,3 @@
 #!/bin/bash
-#Bash script that takes in a URL as an argument, sends a GET request to the
-#URL, and displays the body of the response
-
+#Bash script that sends get request with a key-value pair
 curl -sL -H "X-School-User-Id:98" "$1"
