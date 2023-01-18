@@ -8,4 +8,4 @@ if __name__ == "__main__":
     url = argv[1]
     with urlopen(url) as response:
         header = response.headers
-    print(header.get('X-Request-Id', 0))
+    print(header.get('X-Request-Id'))

@@ -9,5 +9,5 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     payload = {"email": argv[2]}
-    resquest = resquests.post(url, data=payload)
+    request = requests.post(url, data=payload)
     print(request.text)
