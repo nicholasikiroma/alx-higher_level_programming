@@ -6,10 +6,10 @@ import requests
 
 
 if __name__ == "__main__":
-    author = argv[1]
-    repo = argv[2]
+    repo_name = argv[1]
+    owner = argv[2]
 
-    url = "https://api.github.com/repos/{}/{}/commits".format(author, repo)
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo_name)
     request = requests.get(url)
     js = request.json()
     i = 0
