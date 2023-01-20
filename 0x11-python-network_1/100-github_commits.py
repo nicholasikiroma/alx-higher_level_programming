@@ -13,11 +13,11 @@ if __name__ == "__main__":
     request = requests.get(url)
     js = request.json()
     i = 0
-    while i < 10:
-        try:
+    try:
+        while i < 10:
             sha = js[i].get('sha')
             name = js[i].get('commit').get('author').get('name')
             print(f"{sha}: {name}")
             i += 1
-        except IndexError:
-            pass
+    except IndexError:
+        pass
