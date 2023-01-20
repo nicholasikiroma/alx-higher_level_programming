@@ -14,7 +14,10 @@ if __name__ == "__main__":
     js = request.json()
     i = 0
     while i < 10:
-        sha = js[i].get('sha')
-        owner = js[i].get('commit').get('author').get('name')
-        print(f"{sha}: {owner}")
-        i += 1
+        try:
+            sha = js[i].get('sha')
+            name = js[i].get('commit').get('author').get('name')
+            print(f"{sha}: {name}")
+            i += 1
+        except IndexError:
+            pass
